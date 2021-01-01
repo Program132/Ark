@@ -21,6 +21,8 @@
 #include <Ark/Exceptions.hpp>
 #include <Ark/Utils.hpp>
 
+#include <utf8.h>
+
 namespace Ark::internal
 {
     enum class TokenType
@@ -145,6 +147,9 @@ namespace Ark::internal
          * @return false 
          */
         inline bool isOperator(const std::string& value) noexcept;
+
+
+        //bool isUTF8(const std::sring& value);
 
         /**
          * @brief Check if a control character / sequence is complete or not

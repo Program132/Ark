@@ -20,7 +20,7 @@ inline TokenType Lexer::guessType(const std::string& value) noexcept
     else if (value[0] == '.' && value.size() > 1 && CHECK_FIRST_CHAR(value[1]))
         return TokenType::GetField;
     // otherwise, identifier if it starts with [a-zA-Z_]
-    else if (CHECK_FIRST_CHAR(value[0]))
+    else if (utf8valid(value.c_str()) == 0)
         return TokenType::Identifier;
     return TokenType::Mismatch;
 }
